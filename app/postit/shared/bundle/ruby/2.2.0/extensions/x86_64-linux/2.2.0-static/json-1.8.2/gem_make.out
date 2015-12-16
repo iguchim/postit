@@ -1,0 +1,9 @@
+/home/deploy/.rbenv/versions/2.2.0/bin/ruby -r ./siteconf20151216-13227-frhy3a.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+make: `all' に対して行うべき事はありません.
+
+make "DESTDIR=" install

@@ -1,0 +1,11 @@
+/home/deploy/.rbenv/versions/2.2.0/bin/ruby -r ./siteconf20151216-13227-13qred.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling atomic_reference.c
+linking shared-object atomic_reference.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 atomic_reference.so ./.gem.20151216-13227-1joso2x

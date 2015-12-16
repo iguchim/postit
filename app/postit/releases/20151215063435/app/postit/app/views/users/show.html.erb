@@ -1,0 +1,37 @@
+<%= render 'shared/content_title', title: 'Profile for ' + @user.username %>
+
+<div class='well'>
+  <dl class='dl-horizontal'>
+    <dt>Username:</dt>
+    <dd><%= @user.username %></dd>
+  </dl>
+</div>
+
+<h5><%= @user.username %>'s Activity</h5>
+
+<ul class='nav nav-tabs'>
+  <li class='<%= 'active' if params[:tab].nil? %>'>
+    <% if false %>
+      <%= link_to "Posts (#{@user.posts.size})", user_path(@user) %>
+    <% else %>
+      <%= link_to "Posts (#{@user.posts.count})", user_path(@user) %>
+    <% end %>
+  </li>
+  <li class='<%= 'active' if params[:tab] == 'comments' %>'>
+    <% if false %>
+      <%= link_to "Coments (#{@user.comments.size})", user_path(@user, tab: 'comments') %>
+    <% else %>
+      <%= link_to "Coments (#{@user.comments.count})", user_path(@user, tab: 'comments') %>
+    <% end %>
+  </li>
+</ul>
+
+<% if params[:tab].nil? %>
+  <% @user.posts.each do |post| %>
+    <%= render 'posts/post', post: post %>
+  <% end %>
+<% elsif params[:tab] == 'comments' %>
+  <% @user.comments.each do |comment| %>
+    <%= render 'comments/comment', comment: comment, show_post: true %>
+  <% end %>
+<% end %>

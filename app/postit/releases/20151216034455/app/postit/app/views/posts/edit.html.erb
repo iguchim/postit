@@ -1,0 +1,10 @@
+<%= render 'shared/content_title', title: 'Edit a new post' %>
+
+<div class = 'well'>
+  <%= render 'shared/errors', obj: @post %>
+
+  <%= form_for @post do |f| %>
+    <%= render 'fields', f: f %>
+    <%= f.submit 'Update Post',class: 'btn btn-primary' %>
+  <% end %>
+</div>
